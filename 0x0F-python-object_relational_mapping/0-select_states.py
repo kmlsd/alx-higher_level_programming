@@ -12,18 +12,17 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    mySQL_u = sys.argv[1]
-    mySQL_p = sys.argv[2]
+    mySQL_usr = sys.argv[1]
+    mySQL_pwd = sys.argv[2]
     db_name = sys.argv[3]
 
-dbconfig = {'user':'mySQL_u', 'passwd':'mySQL_p', 'db' :'db_name'}
 
-conn = MySQLdb.connect(**dbconfig)
- cur = conn.cursor()
+
+conn = MySQLdb.connect(user = mySQL_usr, passwd = mySQL_pwd, db = db_name)
+cursor = conn.cursor()
 sql_code = """SELECT * FROM states ORDER BY id"""
+cursor.execute(sql_code)
+rows = cur.fetchall()
 
-    cur.execute(sql_code)
-    rows = cur.fetchall()
-
-    for row in rows:
-        print(row)
+for row in rows:
+     print(row)
