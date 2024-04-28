@@ -18,11 +18,15 @@ if __name__ == "__main__":
 
 
 
-conn = MySQLdb.connect(user = mySQL_usr, passwd = mySQL_pwd, db = db_name)
+conn = MySQLdb.connect(host="localhost", port=3306, charset="utf8", user=mySQL_usr, passwd=mySQL_pwd, db=db_name)
 cursor = conn.cursor()
+conn.commit()
+
 sql_code = """SELECT * FROM states ORDER BY id ASC"""
 cursor.execute(sql_code)
 rows = cur.fetchall()
 
 for row in rows:
      print(row)
+cursor.close()
+conn.close()
