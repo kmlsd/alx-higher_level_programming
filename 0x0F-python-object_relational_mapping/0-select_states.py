@@ -22,8 +22,8 @@ conn = MySQLdb.connect(host="localhost", port=3306, charset="utf8", user=mySQL_u
 cursor = conn.cursor()
 conn.commit()
 
-sql_code = """SELECT * FROM states ORDER BY id ASC"""
-cursor.execute(sql_code)
+sq_code = """SELECT * FROM states ORDER BY id ASC"""
+cursor.execute(sq_code)
 rows = cur.fetchall()
 
 for row in rows:
