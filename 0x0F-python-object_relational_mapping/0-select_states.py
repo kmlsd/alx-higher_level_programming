@@ -16,7 +16,7 @@ if __name__ == "__main__":
     mySQL_p = sys.argv[2]
     db_name = sys.argv[3]
 
-dbconfig = { 'host': '127.0.0.1', 'port':'3306','user':'mySQL_u', 'passwd':'mySQL_p', 'db' :'db_name'}
+dbconfig = {'user':'mySQL_u', 'passwd':'mySQL_p', 'db' :'db_name'}
 
 conn = MySQLdb.connect(**dbconfig)
  cur = conn.cursor()
