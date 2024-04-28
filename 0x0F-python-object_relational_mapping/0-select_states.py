@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
 conn = MySQLdb.connect(user = mySQL_usr, passwd = mySQL_pwd, db = db_name)
 cursor = conn.cursor()
-sql_code = """SELECT * FROM states ORDER BY id"""
+sql_code = """SELECT * FROM states ORDER BY id ASC"""
 cursor.execute(sql_code)
 rows = cur.fetchall()
 
