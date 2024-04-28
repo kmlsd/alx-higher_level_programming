@@ -11,8 +11,8 @@ if __name__ == "__main__":
     cur = conn.cursor()
     sq = """
 SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC"""
-    q = sq.format(argv[4])
-    cur.execute(q)
+    sq = sq.format(argv[4])
+    cur.execute(sq)
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
