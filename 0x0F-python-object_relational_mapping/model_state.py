@@ -1,20 +1,17 @@
-
 #!/usr/bin/python3
-"""Start link class to table in database
-"""
-import sys
-from model_state import Base, State
+""" Defines State ORM object"""
 
-from sqlalchemy import create_engine, Column, Integer, String, declarative_base
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+from model_city import City
 
-if __name__ == "__main__":
-    engine = create_engine('mysql://user:password@localhost:3306/hbtn_0e_6_usa')
-    Base.metadata.create_all(engine)
-    
-   class State(Base):
-    __tablename__ = 'states'  # Table name
+Base = declarative_base()
 
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+
+class State(Base):
+    """State ORM class"""
+    __tablename__ = "states"
+    id = Column(Integer, primary_key=True, nullable=False,
+                autoincrement=True, unique=True)
     name = Column(String(128), nullable=False)
-
-
