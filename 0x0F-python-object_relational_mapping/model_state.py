@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 """ Defines State ORM object"""
 
 from sqlalchemy import Column, Integer, String
