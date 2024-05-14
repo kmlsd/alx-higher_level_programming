@@ -1,3 +1,5 @@
+
 #!/bin/bash
-# catch as catch can
-curl -sL -X PUT -H "Origin: test" -d "user_id=98" "0.0.0.0:5000/catch_me
+#  Bash script that makes a request to 0.0.0.0:5000/catch_me  response "You got me!"
+curl -sX PUT -L -d "user_id=98" --header "origin: You got me!" 0.0.0.0:5000/catch_me
+
